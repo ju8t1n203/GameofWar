@@ -13,8 +13,9 @@ Public Class Game
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         Me.Close()
     End Sub
-
     Private Sub DealButton_Click(sender As Object, e As EventArgs) Handles DealButton.Click
+
+        ' The code that was associated with using the now obsolete "Shuffler" class
 
         'Dim dealtCards As Integer(,) = Shuffler.Shuffle() 'shuffle and deal for the player and computer
 
@@ -34,11 +35,11 @@ Public Class Game
         '    ComputerListBox.Items.Add(dealtCards(computerIndex, card))
         'Next
 
+        PlayerListBox.Items.Clear()
+        ComputerListBox.Items.Clear()
+
         Dim deck As New CardGenerator("Deck")
 
-        deck.GetRemaining()
-
-        'Label1.Text = deck.Deal().PrettyName
         For i = 0 To 25
 
             PlayerListBox.Items.Add(deck.Deal().PrettyName)

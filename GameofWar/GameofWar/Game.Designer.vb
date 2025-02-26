@@ -31,7 +31,7 @@ Partial Class Game
         '
         'ExitButton
         '
-        Me.ExitButton.Location = New System.Drawing.Point(623, 338)
+        Me.ExitButton.Location = New System.Drawing.Point(911, 384)
         Me.ExitButton.Name = "ExitButton"
         Me.ExitButton.Size = New System.Drawing.Size(151, 98)
         Me.ExitButton.TabIndex = 0
@@ -40,7 +40,7 @@ Partial Class Game
         '
         'DealButton
         '
-        Me.DealButton.Location = New System.Drawing.Point(466, 338)
+        Me.DealButton.Location = New System.Drawing.Point(911, 259)
         Me.DealButton.Name = "DealButton"
         Me.DealButton.Size = New System.Drawing.Size(151, 98)
         Me.DealButton.TabIndex = 0
@@ -52,9 +52,9 @@ Partial Class Game
         Me.PlayerListBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PlayerListBox.FormattingEnabled = True
         Me.PlayerListBox.ItemHeight = 24
-        Me.PlayerListBox.Location = New System.Drawing.Point(259, 25)
+        Me.PlayerListBox.Location = New System.Drawing.Point(475, 25)
         Me.PlayerListBox.Name = "PlayerListBox"
-        Me.PlayerListBox.Size = New System.Drawing.Size(196, 388)
+        Me.PlayerListBox.Size = New System.Drawing.Size(413, 580)
         Me.PlayerListBox.TabIndex = 1
         '
         'ComputerListBox
@@ -64,13 +64,13 @@ Partial Class Game
         Me.ComputerListBox.ItemHeight = 24
         Me.ComputerListBox.Location = New System.Drawing.Point(12, 25)
         Me.ComputerListBox.Name = "ComputerListBox"
-        Me.ComputerListBox.Size = New System.Drawing.Size(196, 388)
+        Me.ComputerListBox.Size = New System.Drawing.Size(428, 580)
         Me.ComputerListBox.TabIndex = 1
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(472, 25)
+        Me.Label1.Location = New System.Drawing.Point(922, 25)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(39, 13)
         Me.Label1.TabIndex = 3
@@ -80,7 +80,7 @@ Partial Class Game
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1074, 662)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ComputerListBox)
         Me.Controls.Add(Me.PlayerListBox)

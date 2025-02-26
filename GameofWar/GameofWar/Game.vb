@@ -35,17 +35,25 @@ Public Class Game
         '    ComputerListBox.Items.Add(dealtCards(computerIndex, card))
         'Next
 
+        'Dim deck As New CardGenerator("Deck")
+
         PlayerListBox.Items.Clear()
         ComputerListBox.Items.Clear()
 
-        Dim deck As New CardGenerator("Deck")
+        Dim competitor As New Players()
 
-        For i = 0 To 25
+        Dim player As Stack(Of PlayingCard) = competitor.CreatePlayerStack()
+        Dim computer As Stack(Of PlayingCard) = competitor.CreateComputerStack()
 
-            PlayerListBox.Items.Add(deck.Deal().PrettyName)
-            ComputerListBox.Items.Add(deck.Deal().PrettyName)
 
+        For Each card As PlayingCard In player
+            PlayerListBox.Items.Add(card.ToString) ' Assuming PlayingCard has a ToString method for display
         Next
+
+        For Each card As PlayingCard In computer
+            ComputerListBox.Items.Add(card.ToString()) ' Assuming PlayingCard has a ToString method for display
+        Next
+
 
     End Sub
 End Class

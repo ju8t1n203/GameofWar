@@ -1,4 +1,11 @@
-﻿Public Class PlayingCard
+﻿'Justin Bell
+'RCET 3371
+'Spring 2025
+
+Option Explicit On
+Option Strict On
+
+Public Class PlayingCard
 
     Property _suit As Integer
     Public ReadOnly Property suit() As Integer
@@ -55,6 +62,11 @@
                 _value = Me.value.ToString
         End Select
         Return _value
+    End Function
+
+    'override ToString
+    Public Overrides Function ToString() As String
+        Return $"{PrettyValue()} of {PrettySuit()}"
     End Function
 
 End Class

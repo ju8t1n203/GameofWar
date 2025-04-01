@@ -8,23 +8,24 @@ Option Strict On
 Public Class Players
 
     Dim deck As New CardGenerator("Deck")
-    Dim playerStack As New Stack(Of PlayingCard)
-    Dim computerStack As New Stack(Of PlayingCard)
+    Dim playerQueue As New Queue(Of PlayingCard)
+    Dim computerQueue As New Queue(Of PlayingCard)
 
-    Public Function CreatePlayerStack() As Stack(Of PlayingCard)
+    Public Function CreatePlayerStack() As Queue(Of PlayingCard)
         For i = 0 To 25
             Dim pCard As PlayingCard = deck.Deal()
-            playerStack.Push(pCard)
+            playerQueue.Enqueue(pCard)
         Next
-        Return playerStack
+        Return playerQueue
     End Function
 
-    Public Function CreateComputerStack() As Stack(Of PlayingCard)
+    Public Function CreateComputerStack() As Queue(Of PlayingCard)
         For i = 0 To 25
             Dim cCard As PlayingCard = deck.Deal
-            computerStack.Push(cCard)
+            computerQueue.Enqueue(cCard)
         Next
-        Return computerStack
+        Return computerQueue
     End Function
+
 
 End Class

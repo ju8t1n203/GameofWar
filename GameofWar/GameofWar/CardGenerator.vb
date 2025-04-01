@@ -19,7 +19,7 @@ Public Class CardGenerator
         End Set
     End Property
 
-    Private _deck As New Stack(Of PlayingCard)
+    Private _deck As New Queue(Of PlayingCard)
 
     Sub New(name As String)
         Me.name = name
@@ -38,7 +38,7 @@ Public Class CardGenerator
             value = RandomNumber(13)
             card = New PlayingCard(suit, value)
             If CheckForCard(card) = False Then
-                Me._deck.Push(card)
+                Me._deck.Enqueue(card)
                 count += 1
             End If
         Loop Until count >= 52
@@ -49,7 +49,7 @@ Public Class CardGenerator
 
     Public Function Deal() As PlayingCard
         If Me._deck.Count > 0 Then
-            Return Me._deck.Pop
+            Return Me._deck.Dequeue
         Else
             Return Nothing
         End If

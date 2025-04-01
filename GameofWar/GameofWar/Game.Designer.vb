@@ -22,16 +22,20 @@ Partial Class Game
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.ExitButton = New System.Windows.Forms.Button()
         Me.DealButton = New System.Windows.Forms.Button()
         Me.PlayerListBox = New System.Windows.Forms.ListBox()
         Me.ComputerListBox = New System.Windows.Forms.ListBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.TableListBox = New System.Windows.Forms.ListBox()
+        Me.HitButton = New System.Windows.Forms.Button()
+        Me.UpdateTimer = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'ExitButton
         '
-        Me.ExitButton.Location = New System.Drawing.Point(911, 384)
+        Me.ExitButton.Location = New System.Drawing.Point(911, 552)
         Me.ExitButton.Name = "ExitButton"
         Me.ExitButton.Size = New System.Drawing.Size(151, 98)
         Me.ExitButton.TabIndex = 0
@@ -40,7 +44,7 @@ Partial Class Game
         '
         'DealButton
         '
-        Me.DealButton.Location = New System.Drawing.Point(911, 259)
+        Me.DealButton.Location = New System.Drawing.Point(911, 70)
         Me.DealButton.Name = "DealButton"
         Me.DealButton.Size = New System.Drawing.Size(151, 98)
         Me.DealButton.TabIndex = 0
@@ -52,9 +56,9 @@ Partial Class Game
         Me.PlayerListBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PlayerListBox.FormattingEnabled = True
         Me.PlayerListBox.ItemHeight = 24
-        Me.PlayerListBox.Location = New System.Drawing.Point(475, 25)
+        Me.PlayerListBox.Location = New System.Drawing.Point(12, 12)
         Me.PlayerListBox.Name = "PlayerListBox"
-        Me.PlayerListBox.Size = New System.Drawing.Size(413, 580)
+        Me.PlayerListBox.Size = New System.Drawing.Size(413, 484)
         Me.PlayerListBox.TabIndex = 1
         '
         'ComputerListBox
@@ -62,9 +66,9 @@ Partial Class Game
         Me.ComputerListBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComputerListBox.FormattingEnabled = True
         Me.ComputerListBox.ItemHeight = 24
-        Me.ComputerListBox.Location = New System.Drawing.Point(12, 25)
+        Me.ComputerListBox.Location = New System.Drawing.Point(460, 12)
         Me.ComputerListBox.Name = "ComputerListBox"
-        Me.ComputerListBox.Size = New System.Drawing.Size(428, 580)
+        Me.ComputerListBox.Size = New System.Drawing.Size(428, 484)
         Me.ComputerListBox.TabIndex = 1
         '
         'Label1
@@ -76,17 +80,40 @@ Partial Class Game
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Label1"
         '
+        'TableListBox
+        '
+        Me.TableListBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TableListBox.FormattingEnabled = True
+        Me.TableListBox.ItemHeight = 24
+        Me.TableListBox.Location = New System.Drawing.Point(12, 515)
+        Me.TableListBox.Name = "TableListBox"
+        Me.TableListBox.Size = New System.Drawing.Size(876, 124)
+        Me.TableListBox.TabIndex = 4
+        '
+        'HitButton
+        '
+        Me.HitButton.Enabled = False
+        Me.HitButton.Location = New System.Drawing.Point(911, 174)
+        Me.HitButton.Name = "HitButton"
+        Me.HitButton.Size = New System.Drawing.Size(151, 98)
+        Me.HitButton.TabIndex = 5
+        Me.HitButton.Text = "&Hit"
+        Me.HitButton.UseVisualStyleBackColor = True
+        '
         'Game
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1074, 662)
+        Me.Controls.Add(Me.HitButton)
+        Me.Controls.Add(Me.TableListBox)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ComputerListBox)
         Me.Controls.Add(Me.PlayerListBox)
         Me.Controls.Add(Me.DealButton)
         Me.Controls.Add(Me.ExitButton)
         Me.Name = "Game"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Game of War"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -98,4 +125,7 @@ Partial Class Game
     Friend WithEvents PlayerListBox As ListBox
     Friend WithEvents ComputerListBox As ListBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents TableListBox As ListBox
+    Friend WithEvents HitButton As Button
+    Friend WithEvents UpdateTimer As Timer
 End Class

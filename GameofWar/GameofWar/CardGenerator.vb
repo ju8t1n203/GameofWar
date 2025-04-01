@@ -55,8 +55,14 @@ Public Class CardGenerator
         End If
     End Function
 
-    Public Function GetRemaining() As Integer
-        Return Me._deck.Count
+    Public Shared Function GetRemaining(_deck As Queue(Of PlayingCard)) As Integer
+        Dim count As Integer
+        If _deck Is Nothing Then
+            count = 0
+        Else
+            count = _deck.Count
+        End If
+        Return count
     End Function
 
     Private Function CheckForCard(newCard As PlayingCard) As Boolean

@@ -26,10 +26,10 @@ Partial Class Game
         Me.DealButton = New System.Windows.Forms.Button()
         Me.PlayerListBox = New System.Windows.Forms.ListBox()
         Me.ComputerListBox = New System.Windows.Forms.ListBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.PTableListBox = New System.Windows.Forms.ListBox()
         Me.HitButton = New System.Windows.Forms.Button()
         Me.CTableListBox = New System.Windows.Forms.ListBox()
+        Me.RoundsLabel = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'ExitButton
@@ -37,7 +37,7 @@ Partial Class Game
         Me.ExitButton.Location = New System.Drawing.Point(911, 552)
         Me.ExitButton.Name = "ExitButton"
         Me.ExitButton.Size = New System.Drawing.Size(151, 98)
-        Me.ExitButton.TabIndex = 0
+        Me.ExitButton.TabIndex = 2
         Me.ExitButton.Text = "E&xit"
         Me.ExitButton.UseVisualStyleBackColor = True
         '
@@ -59,6 +59,7 @@ Partial Class Game
         Me.PlayerListBox.Name = "PlayerListBox"
         Me.PlayerListBox.Size = New System.Drawing.Size(413, 484)
         Me.PlayerListBox.TabIndex = 1
+        Me.PlayerListBox.TabStop = False
         '
         'ComputerListBox
         '
@@ -69,15 +70,7 @@ Partial Class Game
         Me.ComputerListBox.Name = "ComputerListBox"
         Me.ComputerListBox.Size = New System.Drawing.Size(428, 484)
         Me.ComputerListBox.TabIndex = 1
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(922, 25)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
-        Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Label1"
+        Me.ComputerListBox.TabStop = False
         '
         'PTableListBox
         '
@@ -88,6 +81,7 @@ Partial Class Game
         Me.PTableListBox.Name = "PTableListBox"
         Me.PTableListBox.Size = New System.Drawing.Size(413, 124)
         Me.PTableListBox.TabIndex = 4
+        Me.PTableListBox.TabStop = False
         '
         'HitButton
         '
@@ -95,7 +89,7 @@ Partial Class Game
         Me.HitButton.Location = New System.Drawing.Point(911, 174)
         Me.HitButton.Name = "HitButton"
         Me.HitButton.Size = New System.Drawing.Size(151, 98)
-        Me.HitButton.TabIndex = 5
+        Me.HitButton.TabIndex = 1
         Me.HitButton.Text = "&Hit"
         Me.HitButton.UseVisualStyleBackColor = True
         '
@@ -108,6 +102,16 @@ Partial Class Game
         Me.CTableListBox.Name = "CTableListBox"
         Me.CTableListBox.Size = New System.Drawing.Size(413, 124)
         Me.CTableListBox.TabIndex = 4
+        Me.CTableListBox.TabStop = False
+        '
+        'RoundsLabel
+        '
+        Me.RoundsLabel.AutoSize = True
+        Me.RoundsLabel.Location = New System.Drawing.Point(922, 25)
+        Me.RoundsLabel.Name = "RoundsLabel"
+        Me.RoundsLabel.Size = New System.Drawing.Size(13, 13)
+        Me.RoundsLabel.TabIndex = 3
+        Me.RoundsLabel.Text = "0"
         '
         'Game
         '
@@ -117,7 +121,7 @@ Partial Class Game
         Me.Controls.Add(Me.HitButton)
         Me.Controls.Add(Me.CTableListBox)
         Me.Controls.Add(Me.PTableListBox)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.RoundsLabel)
         Me.Controls.Add(Me.ComputerListBox)
         Me.Controls.Add(Me.PlayerListBox)
         Me.Controls.Add(Me.DealButton)
@@ -134,8 +138,8 @@ Partial Class Game
     Friend WithEvents DealButton As Button
     Friend WithEvents PlayerListBox As ListBox
     Friend WithEvents ComputerListBox As ListBox
-    Friend WithEvents Label1 As Label
     Friend WithEvents PTableListBox As ListBox
     Friend WithEvents HitButton As Button
     Friend WithEvents CTableListBox As ListBox
+    Friend WithEvents RoundsLabel As Label
 End Class

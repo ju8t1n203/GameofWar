@@ -1,20 +1,35 @@
 ﻿Public Class Logic
 
-    Public Shared Sub CompareCards(pQueue As Queue(Of PlayingCard), pCard As PlayingCard, cQueue As Queue(Of PlayingCard), cCard As PlayingCard, pContainer As ListBox, cContainer As ListBox)
+    'Public Shared Sub CompareCards(pQueue As Queue(Of PlayingCard), pCard As PlayingCard, cQueue As Queue(Of PlayingCard), cCard As PlayingCard, pContainer As ListBox, cContainer As ListBox)
+
+    '    If pCard.value > cCard.value Then
+    '        pQueue.Enqueue(pCard)
+    '        pQueue.Enqueue(cCard)
+    '        pContainer.Items.Add(pCard)
+    '        pContainer.Items.Add(cCard)
+    '    ElseIf pCard.value < cCard.value Then
+    '        cQueue.Enqueue(cCard)
+    '        cQueue.Enqueue(pCard)
+    '        cContainer.Items.Add(cCard)
+    '        cContainer.Items.Add(pCard)
+    '    ElseIf pCard.value = cCard.value Then
+    '        'war
+    '    End If
+    'End Sub
+
+    Public Shared Function CompareCards(pCard As PlayingCard, cCard As PlayingCard) As String
+        Dim highCard As String = ""
 
         If pCard.value > cCard.value Then
-            pQueue.Enqueue(pCard)
-            pQueue.Enqueue(cCard)
-            pContainer.Items.Add(pCard)
-            pContainer.Items.Add(cCard)
+            highCard = "Player"
         ElseIf pCard.value < cCard.value Then
-            cQueue.Enqueue(cCard)
-            cQueue.Enqueue(pCard)
-            cContainer.Items.Add(cCard)
-            cContainer.Items.Add(pCard)
+            highCard = "Computer"
         ElseIf pCard.value = cCard.value Then
-            'war
+            highCard = "Tie"
         End If
-    End Sub
+
+        Return highCard
+    End Function
+
 
 End Class

@@ -11,6 +11,7 @@ Imports System.Globalization
 Public Class Game
     Dim player As Queue(Of PlayingCard)
     Dim computer As Queue(Of PlayingCard)
+    Dim war As Queue(Of PlayingCard)
 
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         Me.Close()
@@ -34,28 +35,23 @@ Public Class Game
             ComputerListBox.Items.Add(card.ToString())
         Next
 
-        UpdateTimer.Enabled = True
         HitButton.Enabled = True
         DealButton.Enabled = False
-    End Sub
-
-    Private Sub UpdateTimer_Tick(sender As Object, e As EventArgs) Handles UpdateTimer.Tick
-
     End Sub
 
     Private Sub HitButton_Click(sender As Object, e As EventArgs) Handles HitButton.Click
         Dim over As Boolean = False
         Dim pCard As PlayingCard
         Dim cCard As PlayingCard
+        Dim roundWinner As String = ""
 
-        TableListBox.Items.Clear()
         Try
             pCard = player.Dequeue
             cCard = computer.Dequeue
             PlayerListBox.Items.RemoveAt(0)
-            TableListBox.Items.Add($"      Player's Card: {pCard} ")
+            PTableListBox.Items.Add($"      Player's Card: {pCard} ")
             ComputerListBox.Items.RemoveAt(0)
-            TableListBox.Items.Add($"Computer's Card: {cCard}")
+            CTableListBox.Items.Add($"Computer's Card: {cCard}")
         Catch ex As Exception
             over = True
             DealButton.Enabled = True
@@ -63,7 +59,24 @@ Public Class Game
         End Try
 
         If over = False Then
-            Logic.CompareCards(player, pCard, computer, cCard, PlayerListBox, ComputerListBox)
+            'make this a sub
+            roundWinner = Logic.CompareCards(pCard, cCard)
+
+            Select Case roundWinner
+                Case "Player"
+                    player.Enqueue(pCard)
+                    player.Enqueue(cCard)
+                    PTableListBox.Items.Clear()
+                    CTableListBox.Items.Clear()
+                Case "Computer"
+                    computer.Enqueue(cCard)
+                    computer.Enqueue(pCard)
+                    PTableListBox.Items.Clear()
+                    CTableListBox.Items.Clear()
+                Case "Tie"
+                    war.Enqueue(pCard)
+                    war.Enqueue(cCard)
+            End Select
         Else
             If PlayerListBox.Items.Count.Equals(0) Then
                 MsgBox("Computer Wins!")

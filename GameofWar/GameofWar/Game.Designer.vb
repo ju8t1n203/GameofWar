@@ -22,15 +22,14 @@ Partial Class Game
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.ExitButton = New System.Windows.Forms.Button()
         Me.DealButton = New System.Windows.Forms.Button()
         Me.PlayerListBox = New System.Windows.Forms.ListBox()
         Me.ComputerListBox = New System.Windows.Forms.ListBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TableListBox = New System.Windows.Forms.ListBox()
+        Me.PTableListBox = New System.Windows.Forms.ListBox()
         Me.HitButton = New System.Windows.Forms.Button()
-        Me.UpdateTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.CTableListBox = New System.Windows.Forms.ListBox()
         Me.SuspendLayout()
         '
         'ExitButton
@@ -80,15 +79,15 @@ Partial Class Game
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Label1"
         '
-        'TableListBox
+        'PTableListBox
         '
-        Me.TableListBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TableListBox.FormattingEnabled = True
-        Me.TableListBox.ItemHeight = 24
-        Me.TableListBox.Location = New System.Drawing.Point(12, 515)
-        Me.TableListBox.Name = "TableListBox"
-        Me.TableListBox.Size = New System.Drawing.Size(876, 124)
-        Me.TableListBox.TabIndex = 4
+        Me.PTableListBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PTableListBox.FormattingEnabled = True
+        Me.PTableListBox.ItemHeight = 24
+        Me.PTableListBox.Location = New System.Drawing.Point(12, 526)
+        Me.PTableListBox.Name = "PTableListBox"
+        Me.PTableListBox.Size = New System.Drawing.Size(413, 124)
+        Me.PTableListBox.TabIndex = 4
         '
         'HitButton
         '
@@ -100,13 +99,24 @@ Partial Class Game
         Me.HitButton.Text = "&Hit"
         Me.HitButton.UseVisualStyleBackColor = True
         '
+        'CTableListBox
+        '
+        Me.CTableListBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CTableListBox.FormattingEnabled = True
+        Me.CTableListBox.ItemHeight = 24
+        Me.CTableListBox.Location = New System.Drawing.Point(460, 526)
+        Me.CTableListBox.Name = "CTableListBox"
+        Me.CTableListBox.Size = New System.Drawing.Size(413, 124)
+        Me.CTableListBox.TabIndex = 4
+        '
         'Game
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1074, 662)
         Me.Controls.Add(Me.HitButton)
-        Me.Controls.Add(Me.TableListBox)
+        Me.Controls.Add(Me.CTableListBox)
+        Me.Controls.Add(Me.PTableListBox)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ComputerListBox)
         Me.Controls.Add(Me.PlayerListBox)
@@ -125,7 +135,7 @@ Partial Class Game
     Friend WithEvents PlayerListBox As ListBox
     Friend WithEvents ComputerListBox As ListBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents TableListBox As ListBox
+    Friend WithEvents PTableListBox As ListBox
     Friend WithEvents HitButton As Button
-    Friend WithEvents UpdateTimer As Timer
+    Friend WithEvents CTableListBox As ListBox
 End Class

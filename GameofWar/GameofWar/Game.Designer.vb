@@ -24,12 +24,14 @@ Partial Class Game
     Private Sub InitializeComponent()
         Me.ExitButton = New System.Windows.Forms.Button()
         Me.DealButton = New System.Windows.Forms.Button()
-        Me.PlayerListBox = New System.Windows.Forms.ListBox()
-        Me.ComputerListBox = New System.Windows.Forms.ListBox()
-        Me.PTableListBox = New System.Windows.Forms.ListBox()
         Me.HitButton = New System.Windows.Forms.Button()
-        Me.CTableListBox = New System.Windows.Forms.ListBox()
         Me.RoundsLabel = New System.Windows.Forms.Label()
+        Me.PCardPictureBox = New System.Windows.Forms.PictureBox()
+        Me.CCardPictureBox = New System.Windows.Forms.PictureBox()
+        Me.WarPictureBox = New System.Windows.Forms.PictureBox()
+        CType(Me.PCardPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CCardPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.WarPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ExitButton
@@ -50,39 +52,6 @@ Partial Class Game
         Me.DealButton.Text = "&Deal"
         Me.DealButton.UseVisualStyleBackColor = True
         '
-        'PlayerListBox
-        '
-        Me.PlayerListBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PlayerListBox.FormattingEnabled = True
-        Me.PlayerListBox.ItemHeight = 24
-        Me.PlayerListBox.Location = New System.Drawing.Point(12, 12)
-        Me.PlayerListBox.Name = "PlayerListBox"
-        Me.PlayerListBox.Size = New System.Drawing.Size(148, 484)
-        Me.PlayerListBox.TabIndex = 1
-        Me.PlayerListBox.TabStop = False
-        '
-        'ComputerListBox
-        '
-        Me.ComputerListBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComputerListBox.FormattingEnabled = True
-        Me.ComputerListBox.ItemHeight = 24
-        Me.ComputerListBox.Location = New System.Drawing.Point(736, 12)
-        Me.ComputerListBox.Name = "ComputerListBox"
-        Me.ComputerListBox.Size = New System.Drawing.Size(152, 484)
-        Me.ComputerListBox.TabIndex = 1
-        Me.ComputerListBox.TabStop = False
-        '
-        'PTableListBox
-        '
-        Me.PTableListBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PTableListBox.FormattingEnabled = True
-        Me.PTableListBox.ItemHeight = 24
-        Me.PTableListBox.Location = New System.Drawing.Point(12, 526)
-        Me.PTableListBox.Name = "PTableListBox"
-        Me.PTableListBox.Size = New System.Drawing.Size(148, 124)
-        Me.PTableListBox.TabIndex = 4
-        Me.PTableListBox.TabStop = False
-        '
         'HitButton
         '
         Me.HitButton.Enabled = False
@@ -93,17 +62,6 @@ Partial Class Game
         Me.HitButton.Text = "&Hit"
         Me.HitButton.UseVisualStyleBackColor = True
         '
-        'CTableListBox
-        '
-        Me.CTableListBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CTableListBox.FormattingEnabled = True
-        Me.CTableListBox.ItemHeight = 24
-        Me.CTableListBox.Location = New System.Drawing.Point(736, 526)
-        Me.CTableListBox.Name = "CTableListBox"
-        Me.CTableListBox.Size = New System.Drawing.Size(152, 124)
-        Me.CTableListBox.TabIndex = 4
-        Me.CTableListBox.TabStop = False
-        '
         'RoundsLabel
         '
         Me.RoundsLabel.AutoSize = True
@@ -113,22 +71,48 @@ Partial Class Game
         Me.RoundsLabel.TabIndex = 3
         Me.RoundsLabel.Text = "0"
         '
+        'PCardPictureBox
+        '
+        Me.PCardPictureBox.Location = New System.Drawing.Point(214, 140)
+        Me.PCardPictureBox.Name = "PCardPictureBox"
+        Me.PCardPictureBox.Size = New System.Drawing.Size(220, 300)
+        Me.PCardPictureBox.TabIndex = 5
+        Me.PCardPictureBox.TabStop = False
+        '
+        'CCardPictureBox
+        '
+        Me.CCardPictureBox.Location = New System.Drawing.Point(482, 140)
+        Me.CCardPictureBox.Name = "CCardPictureBox"
+        Me.CCardPictureBox.Size = New System.Drawing.Size(220, 300)
+        Me.CCardPictureBox.TabIndex = 5
+        Me.CCardPictureBox.TabStop = False
+        '
+        'WarPictureBox
+        '
+        Me.WarPictureBox.Location = New System.Drawing.Point(320, 217)
+        Me.WarPictureBox.Name = "WarPictureBox"
+        Me.WarPictureBox.Size = New System.Drawing.Size(280, 142)
+        Me.WarPictureBox.TabIndex = 6
+        Me.WarPictureBox.TabStop = False
+        '
         'Game
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1074, 662)
+        Me.Controls.Add(Me.WarPictureBox)
+        Me.Controls.Add(Me.CCardPictureBox)
+        Me.Controls.Add(Me.PCardPictureBox)
         Me.Controls.Add(Me.HitButton)
-        Me.Controls.Add(Me.CTableListBox)
-        Me.Controls.Add(Me.PTableListBox)
         Me.Controls.Add(Me.RoundsLabel)
-        Me.Controls.Add(Me.ComputerListBox)
-        Me.Controls.Add(Me.PlayerListBox)
         Me.Controls.Add(Me.DealButton)
         Me.Controls.Add(Me.ExitButton)
         Me.Name = "Game"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Game of War"
+        CType(Me.PCardPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CCardPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WarPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -136,10 +120,9 @@ Partial Class Game
 
     Friend WithEvents ExitButton As Button
     Friend WithEvents DealButton As Button
-    Friend WithEvents PlayerListBox As ListBox
-    Friend WithEvents ComputerListBox As ListBox
-    Friend WithEvents PTableListBox As ListBox
     Friend WithEvents HitButton As Button
-    Friend WithEvents CTableListBox As ListBox
     Friend WithEvents RoundsLabel As Label
+    Friend WithEvents PCardPictureBox As PictureBox
+    Friend WithEvents CCardPictureBox As PictureBox
+    Friend WithEvents WarPictureBox As PictureBox
 End Class

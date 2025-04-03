@@ -24,8 +24,4 @@
         Return highCard
     End Function
 
-    Public Shared Sub HighPlayer()
-
-    End Sub
-
 End Class

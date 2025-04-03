@@ -64,6 +64,40 @@ Public Class PlayingCard
         Return _value
     End Function
 
+    Public Function ShowCard() As String
+        Dim _call As String
+        Dim _value As String
+        Dim _suit As String
+
+        Select Case Me.value
+            Case 1
+                _value = "A"
+            Case 11
+                _value = "J"
+            Case 12
+                _value = "Q"
+            Case 13
+                _value = "K"
+            Case Else
+                _value = Me.value.ToString
+        End Select
+
+        Select Case Me.suit
+            Case 1
+                _suit = "C"
+            Case 2
+                _suit = "D"
+            Case 3
+                _suit = "H"
+            Case 4
+                _suit = "S"
+        End Select
+
+        _call = String.Concat(_value, _suit)
+
+        Return _call
+    End Function
+
     'override ToString
     Public Overrides Function ToString() As String
         Return $"{PrettyValue()} of {PrettySuit()}"

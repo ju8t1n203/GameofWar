@@ -22,22 +22,11 @@ Public Class Game
     Private Sub DealButton_Click(sender As Object, e As EventArgs) Handles DealButton.Click
 
         RoundsLabel.Text = "0"
-        PlayerListBox.Items.Clear()
-        ComputerListBox.Items.Clear()
 
         Dim competitor As New Players()
 
         player = competitor.CreatePlayerStack()
         computer = competitor.CreateComputerStack()
-
-
-        For Each card As PlayingCard In player
-            PlayerListBox.Items.Add(card.ToString)
-        Next
-
-        For Each card As PlayingCard In computer
-            ComputerListBox.Items.Add(card.ToString())
-        Next
 
         HitButton.Enabled = True
         DealButton.Enabled = False
@@ -48,14 +37,9 @@ Public Class Game
         Dim pCard As PlayingCard
         Dim cCard As PlayingCard
 
-        PTableListBox.Items.Clear()
-        CTableListBox.Items.Clear()
-
         Try
             pCard = player.Dequeue
             cCard = computer.Dequeue
-            PlayerListBox.Items.RemoveAt(0)
-            ComputerListBox.Items.RemoveAt(0)
         Catch ex As Exception
             over = True
             DealButton.Enabled = True
@@ -65,15 +49,15 @@ Public Class Game
 
         If over = False Then
 
-            PTableListBox.Items.Add($"      Player's Card: {pCard} ")
-            CTableListBox.Items.Add($"Computer's Card: {cCard}")
-
             RoundsLabel.Text = $"{CInt(RoundsLabel.Text) + 1}"
+
+            ShowCard(pCard.ShowCard, PCardPictureBox)
+            ShowCard(cCard.ShowCard, CCardPictureBox)
 
             MoreLogic(Logic.CompareCards(pCard, cCard), pCard, cCard)
 
         Else
-            If PlayerListBox.Items.Count.Equals(0) Then
+            If player.Count.Equals(0) Then
                 MsgBox("Computer Wins!")
             Else
                 MsgBox("Player Wins!")
@@ -88,16 +72,13 @@ Public Class Game
 
                 player.Enqueue(pCard)
                 player.Enqueue(cCard)
-                PlayerListBox.Items.Add(pCard)
-                PlayerListBox.Items.Add(cCard)
 
                 If war.Count > 0 Then
-                    MsgBox("Player wins WAR!!!")
+                    'MsgBox("Player wins WAR!!!")
                     Dim active As PlayingCard
                     For i = 0 To war.Count - 1
                         active = war.Dequeue
                         player.Enqueue(active)
-                        PlayerListBox.Items.Add(active)
                     Next
                 End If
 
@@ -105,24 +86,37 @@ Public Class Game
 
                 computer.Enqueue(cCard)
                 computer.Enqueue(pCard)
-                ComputerListBox.Items.Add(cCard)
-                ComputerListBox.Items.Add(pCard)
 
                 If war.Count > 0 Then
-                    MsgBox("Computer wins WAR!!!")
+                    'MsgBox("Computer wins WAR!!!")
                     Dim active As PlayingCard
                     For i = 0 To war.Count - 1
                         active = war.Dequeue
                         computer.Enqueue(active)
-                        ComputerListBox.Items.Add(active)
                     Next
                 End If
 
             Case "Tie"
-                MsgBox("WAR!!!")
+                'MsgBox("WAR!!!")
                 war.Enqueue(pCard)
                 war.Enqueue(cCard)
         End Select
+    End Sub
+
+    Sub ShowCard(cardname As String, destination As PictureBox)
+        destination.SizeMode = PictureBoxSizeMode.Zoom
+        Dim g As Graphics = destination.CreateGraphics
+        Dim cardImage As Image
+        Dim h% = CInt(destination.Height + 0.8)
+        Dim x% = CardGenerator.RandomNumber(CInt(destination.Width / 5))
+        Dim y% = CardGenerator.RandomNumber(CInt(destination.Height / 5))
+
+        cardImage = CType(My.Resources.ResourceManager.GetObject(cardname), Image)
+
+        destination.Image = cardImage
+
+        'g.DrawImage(cardImage, x%, y%)
+        g.Dispose()
     End Sub
 
 End Class

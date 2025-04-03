@@ -74,7 +74,7 @@ Public Class CardGenerator
         Return False
     End Function
 
-    Private Function RandomNumber(max As Integer) As Integer
+    Public Shared Function RandomNumber(max As Integer) As Integer
         Randomize()
         Return CInt(Math.Floor(Rnd() * max)) + 1
     End Function

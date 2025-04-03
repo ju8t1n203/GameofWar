@@ -87,6 +87,11 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Logic.vb" />
+    <Compile Include="MainForm.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainForm.resx</DependentUpon>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -116,7 +121,10 @@
     <EmbeddedResource Include="Game.resx">
       <DependentUpon>Game.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx" />
+    <EmbeddedResource Include="MainForm.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MainForm.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -312,6 +320,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\QS.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\war.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

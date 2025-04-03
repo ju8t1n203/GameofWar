@@ -28,6 +28,9 @@ Public Class Game
         player = competitor.CreatePlayerStack()
         computer = competitor.CreateComputerStack()
 
+        PCardCountLabel.Text = CStr($"{player.Count}")
+        CCardCountLabel.Text = CStr($"{computer.Count}")
+
         HitButton.Enabled = True
         DealButton.Enabled = False
     End Sub
@@ -50,6 +53,8 @@ Public Class Game
         If over = False Then
 
             RoundsLabel.Text = $"{CInt(RoundsLabel.Text) + 1}"
+            PCardCountLabel.Text = CStr($"{player.Count}")
+            CCardCountLabel.Text = CStr($"{computer.Count}")
 
             ShowCard(pCard.ShowCard, PCardPictureBox)
             ShowCard(cCard.ShowCard, CCardPictureBox)
@@ -70,6 +75,8 @@ Public Class Game
         Select Case roundwinner
             Case "Player"
 
+                WarPictureBox.Visible = False
+
                 player.Enqueue(pCard)
                 player.Enqueue(cCard)
 
@@ -83,6 +90,8 @@ Public Class Game
                 End If
 
             Case "Computer"
+
+                WarPictureBox.Visible = False
 
                 computer.Enqueue(cCard)
                 computer.Enqueue(pCard)
@@ -98,13 +107,13 @@ Public Class Game
 
             Case "Tie"
                 'MsgBox("WAR!!!")
+                WarPictureBox.Visible = True
                 war.Enqueue(pCard)
                 war.Enqueue(cCard)
         End Select
     End Sub
 
     Sub ShowCard(cardname As String, destination As PictureBox)
-        destination.SizeMode = PictureBoxSizeMode.Zoom
         Dim g As Graphics = destination.CreateGraphics
         Dim cardImage As Image
         Dim h% = CInt(destination.Height + 0.8)

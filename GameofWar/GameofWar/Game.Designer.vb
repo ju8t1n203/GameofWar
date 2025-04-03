@@ -57,7 +57,7 @@ Partial Class Game
         Me.PlayerListBox.ItemHeight = 24
         Me.PlayerListBox.Location = New System.Drawing.Point(12, 12)
         Me.PlayerListBox.Name = "PlayerListBox"
-        Me.PlayerListBox.Size = New System.Drawing.Size(413, 484)
+        Me.PlayerListBox.Size = New System.Drawing.Size(148, 484)
         Me.PlayerListBox.TabIndex = 1
         Me.PlayerListBox.TabStop = False
         '
@@ -66,9 +66,9 @@ Partial Class Game
         Me.ComputerListBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComputerListBox.FormattingEnabled = True
         Me.ComputerListBox.ItemHeight = 24
-        Me.ComputerListBox.Location = New System.Drawing.Point(460, 12)
+        Me.ComputerListBox.Location = New System.Drawing.Point(736, 12)
         Me.ComputerListBox.Name = "ComputerListBox"
-        Me.ComputerListBox.Size = New System.Drawing.Size(428, 484)
+        Me.ComputerListBox.Size = New System.Drawing.Size(152, 484)
         Me.ComputerListBox.TabIndex = 1
         Me.ComputerListBox.TabStop = False
         '
@@ -79,7 +79,7 @@ Partial Class Game
         Me.PTableListBox.ItemHeight = 24
         Me.PTableListBox.Location = New System.Drawing.Point(12, 526)
         Me.PTableListBox.Name = "PTableListBox"
-        Me.PTableListBox.Size = New System.Drawing.Size(413, 124)
+        Me.PTableListBox.Size = New System.Drawing.Size(148, 124)
         Me.PTableListBox.TabIndex = 4
         Me.PTableListBox.TabStop = False
         '
@@ -98,9 +98,9 @@ Partial Class Game
         Me.CTableListBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CTableListBox.FormattingEnabled = True
         Me.CTableListBox.ItemHeight = 24
-        Me.CTableListBox.Location = New System.Drawing.Point(460, 526)
+        Me.CTableListBox.Location = New System.Drawing.Point(736, 526)
         Me.CTableListBox.Name = "CTableListBox"
-        Me.CTableListBox.Size = New System.Drawing.Size(413, 124)
+        Me.CTableListBox.Size = New System.Drawing.Size(152, 124)
         Me.CTableListBox.TabIndex = 4
         Me.CTableListBox.TabStop = False
         '

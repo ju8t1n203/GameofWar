@@ -2,12 +2,22 @@
 
     Public Shared Function CompareCards(pCard As PlayingCard, cCard As PlayingCard) As String
         Dim highCard As String = ""
+        Dim first As Integer = pCard.value
+        Dim second As Integer = cCard.value
 
-        If pCard.value > cCard.value Then
+        If first = 1 Then
+            first = 14
+        End If
+
+        If second = 1 Then
+            second = 14
+        End If
+
+        If first > second Then
             highCard = "Player"
-        ElseIf pCard.value < cCard.value Then
+        ElseIf first < second Then
             highCard = "Computer"
-        ElseIf pCard.value = cCard.value Then
+        ElseIf first = second Then
             highCard = "Tie"
         End If
 
